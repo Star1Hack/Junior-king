@@ -1,0 +1,21 @@
+n hashing there is a hash function that maps keys to some values. But these hashing function may lead to collision that is two or more keys are mapped to same value. Chain hashing avoids collision. The idea is to make each cell of hash table point to a linked list of records that have same hash function value.
+
+Let’s create a hash function, such that our hash table has ‘N’ number of buckets.
+To insert a node into the hash table, we need to find the hash index for the given key. And it could be calculated using the hash function.
+Example: hashIndex = key % noOfBuckets
+
+Insert: Move to the bucket corresponds to the above calculated hash index and insert the new node at the end of the list.
+The problem at hands is to speed up searching. Consider the problem of searching an array for a given value. If the array is not sorted, the search might require examining each and all elements of the array. If the array is sorted, we can use the binary search, and therefore reduce the worse-case runtime complexity to O(log n). We could search even faster if we know in advance the index at which that value is located in the array. Suppose we do have that magic function that would tell us the index for a given value. With this magic function our search is reduced to just one probe, giving us a constant runtime O(1). Such a function is called a hash function . A hash function is a function which when given a key, generates an address in the table. 	   
+Delete: To delete a node from hash table, calculate the hash index for the key, move to the bucket corresponds to the calculated hash index, search the list in the current bucket to find and remove the node with the given key (if found).
+The example of a hash function is a book call number. Each book in the library has a unique call number. A call number is like an address: it tells us where the book is located in the library. Many academic libraries in the United States, uses Library of Congress Classification for call numbers. This system uses a combination of letters and numbers to arrange materials by subjects.
+
+A hash function that returns a unique hash number is called a universal hash function. In practice it is extremely hard to assign unique numbers to objects. The later is always possible only if you know (or approximate) the number of objects to be proccessed.
+
+Thus, we say that our hash function has the following properties
+
+    it always returns a number for an object.
+    two equal objects will always have the same number
+    two unequal objects not always have different numbers 
+
+The precedure of storing objets using a hash function is the following.
+Create an array of size M. Choose a hash function h, that is a mapping from objects into integers 0, 1, ..., M-1. Put these objects into an array at indexes computed via the hash function index = h(object). Such array is called a hash table. 
