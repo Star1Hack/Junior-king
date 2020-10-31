@@ -1,1 +1,1 @@
-Thie repository contains simple  issus that has to be solved. It will be really greta if someone can help me over this.
+This repository contains simple  issues that has to be solved. It will be really great if someone can help me over this.
